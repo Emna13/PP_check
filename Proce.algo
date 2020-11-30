@@ -1,0 +1,72 @@
+// 1
+PROCEDURE dot_product(v1,v2,ps)
+VAR
+    v1,v2: ARRAY_OF INTEGER[];
+    ps: INTEGER:=0;
+    i,j,a,b:INTEGER;
+BEGIN
+FOR i FROM 0 TO max v1.length-1 STEP 1  DO
+    Write ("give v1");
+    Read (v1[i]);
+END_FOR
+FOR j FROM 0 TO v2.length-1 STEP 1  DO
+    Write ("give v2");
+    Read (v2[j]);
+END_FOR
+
+a:=v1.length;
+b:=v2.length;
+
+IF (a=b) THEN
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        FOR j FROM 0 TO v2.length-1 STEP 1  DO
+            ps:=ps +(v1[i]*v2[j]);
+        END_FOR
+    END_FOR
+END_IF
+END
+
+// 2
+
+ALGORITHM PP
+VAR
+    n1, n2 : ARRAY_OF INTEGER[];
+    ps:INTEGER;
+BEGIN
+    dot_product(n1,n2,ps)
+    // en cas de fonction: dot_product (n1,n2):ps;
+       IF (ps=0) THEN
+            Write("The vectors are orthogonal");
+        ELSE
+            Write("The vectors are not orthogonal")
+        END_IF
+    END_IF
+END
+
+// 3
+FUNCTION dot_product(v1,v2) : INTEGER;
+VAR
+    v1,v2 : ARRAY_OF INTEGER[];
+    ps: INTEGER:=0;
+    i,j,a,b:INTEGER;
+BEGIN
+    FOR i FROM 0 TO max v1.length-1 STEP 1  DO
+    Write ("give v1");
+    Read (v1[i]);
+END_FOR
+FOR j FROM 0 TO v2.length-1 STEP 1  DO
+    Write ("give v2");
+    Read (v2[j]);
+END_FOR
+a:=v1.length;
+b:=v2.length;
+
+IF (a=b) THEN
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        FOR j FROM 0 TO v2.length-1 STEP 1  DO
+            ps:=ps +(v1[i]*v2[j]);
+        END_FOR
+    END_FOR
+END_IF
+    RETURN ps ;
+END
